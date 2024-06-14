@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みち知るべ</title>
+    <link rel="stylesheet" href="src/destyle.css">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <!-- グローバルナビゲーション -->
+    <nav>
+        <div class="logo">
+          <h4>みち知るべ</h4>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#私たちについて">私たちについて</a></li>
+          <li><a href="#活動内容">活動内容</a></li>
+          <li><a href="#お問い合わせ">お問い合わせ</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+    <!-- ファーストビュー -->
+    <div class="header">
+        <img src="img/header-pic.jpg" alt="集合写真">
+        <h1>みち知るべ</h1>
+    </div>
+
+    <!-- 理念 -->
+    <div class="container" id="理念">
+        <h2>理念</h2>
+        <p>
+            「みち知るべ」は、子供たちの未来への「みちしるべ」となることを目指し、彼らが新たな知識や経験を得る場を提供することに尽力します。私たちは、子供たちが自身の得意分野を見つけ、自信を持って成長できるよう、多様なワークショップを通じてサポートします。さらに、得意分野を見つけた子供たちが仲間を助け合い、共に成長することで、助け合いの輪が広がることを願っています。
+        </p>
+    </div>
+
+    <!-- 私たちについて -->
+    <div class="container" id="私たちについて">
+        <h2>私たちについて</h2>
+        <p>
+            「みち知るべ」は、子供たちと共に成長することを目的としたボランティア学生団体です。私たちは、子供たち一人一人の可能性を引き出し、自信を持って未来に向かって歩む力を育むために活動しています。
+        </p>
+        <p>
+            私たちの活動は、多岐にわたるワークショップを通じて行われます。絵画、音楽、スポーツ、科学実験など、さまざまな分野での体験を提供し、子供たちが自分の得意分野を発見する手助けをします。また、ワークショップの中で得た知識やスキルを共有し、仲間を助け合うことで、協力し合う大切さを学びます。
+        </p>
+        <p>
+            「みち知るべ」は、子供たちが自信を持ち、互いに助け合いながら成長できる環境を提供し、明るい未来への「みちしるべ」となることを目指しています。私たちと一緒に、子供たちの笑顔と成長を支える活動に参加しませんか？
+        </p>
+    </div>
+
+    <!-- 活動内容 -->
+    <div class="container" id="活動内容">
+        <h2>活動内容</h2>
+        <p>
+            私たちは様々なワークショップやイベントを通じて、子供たちの成長をサポートしています。以下は主な活動内容です：
+        </p>
+        <ul>
+            <li>絵画ワークショップ - 創造力と表現力を育む</li>
+            <li>音楽セッション - 音楽を通じて感性を磨く</li>
+            <li>スポーツイベント - 健康的な体とチームワークを養う</li>
+            <li>科学実験教室 - 科学への興味を引き出す</li>
+            <li>読書会 - 読解力とコミュニケーション能力を高める</li>
+        </ul>
+    </div>
+
+    <!-- お問い合わせ -->
+    <div class="container" id="お問い合わせ">
+        <h2>お問い合わせ</h2>
+        <form class="contact-form">
+            <label for="name">お名前:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">メールアドレス:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">メッセージ:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button type="submit">送信</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
