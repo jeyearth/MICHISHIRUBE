@@ -116,9 +116,167 @@ h2 {
     text-align: center;
 }
 
+#私たちについて {
+    position: relative;
+    background-color: #FFF5ED;
+    padding: 20px; 
+    padding-top: 50px;
+
+    .container-title{
+        font-size: 5rem;
+        font-weight: bold;
+        margin-left: 10%;
+        color: #1489FF;
+    }
+
+    .unit {
+        position: relative;
+        display: flex;
+        margin: 0% 10% 5% 10%;
+        align-items: center; 
+
+        .shape {
+            text-align: center;
+            width: 20vw;
+            height: 20vw;
+            background-color: white;
+            margin: 10px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 15vw;
+        }
+
+        .unit-card {
+            background-color: white;
+            flex: 1; 
+            padding: 10px; 
+            min-height: 20vw;
+            margin-left: 80px;
+            border-radius: 50px;
+            padding: 50px;
+
+            p,
+            h3{
+                position: relative;
+                z-index: 2;
+            }
+            
+            h3 {
+                margin-bottom: 30px;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 1.8rem;
+            }
+        }
+
+        #shape00{
+            border-radius: 100%;
+            background-color: #B8E2AE;
+        }
+
+        #shape01{
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            background-color: #9BD4FF;
+            position: relative;
+
+            p{
+                position: relative;
+                bottom: -2vw;
+            }
+        }
+
+        #shape02{
+            border-radius: 10%;
+            background-color: #FFC400;
+        }
+    }
+
+    #unit2{
+        flex-direction: row-reverse;
+        .unit-card{
+            margin-left: 0px;
+            margin-right: 80px;
+        }
+    }
+
+    .decoretion-shape{
+        position: absolute;
+    }
+
+    #decoration00{
+        width: 12vw;
+        height: 12vw;
+        border-radius: 100%;
+        background-color: #FFC400;
+        right: 27%;
+        top: 30%;
+    }
+
+    #decoration01{
+        width: 8vw;
+        height: 8vw;
+        border-radius: 100%;
+        background-color: #FF9BBD;
+        left: 30%;
+        top: 60%;
+        z-index: 1;
+    }
+}
+
+
+
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 55%;
+    }
+
+    #私たちについて{
+        .container-title{
+            font-size: 3.5rem;
+        }
+
+        .unit,
+        #unit2{
+            flex-direction: column;
+            align-items: start;
+
+            .shape{
+                width: 10vw;
+                height: 10vw;
+                font-size: 5vw;
+            }
+
+            .unit-card{
+                margin: 0px;
+                padding: 40px;
+                
+                h3{
+                    font-size: 2.5rem;
+                }
+
+                p{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        #unit2{
+            align-items: end;
+        }
+
+        #decoration00{
+            top: 32%;
+        }
+
+        #decoration01{
+            top: 65%;
+            left: 33%;
+        }
     }
 }
 
