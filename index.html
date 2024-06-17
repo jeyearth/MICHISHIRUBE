@@ -29,16 +29,24 @@
 
     <!-- ファーストビュー -->
     <div class="header">
-        <img src="img/header-pic.jpg" alt="集合写真">
-        <h1>みち知るべ</h1>
+        <img class="header-pic" src="img/header-pic-2.jpg" alt="集合写真">
+        <img class="logo" src="img/michishirube-logo.png" alt="ロゴ">
     </div>
 
     <!-- 理念 -->
-    <div class="container" id="理念">
-        <h2>理念</h2>
-        <p>
-            「みち知るべ」は、子供たちの未来への「みちしるべ」となることを目指し、彼らが新たな知識や経験を得る場を提供することに尽力します。私たちは、子供たちが自身の得意分野を見つけ、自信を持って成長できるよう、多様なワークショップを通じてサポートします。さらに、得意分野を見つけた子供たちが仲間を助け合い、共に成長することで、助け合いの輪が広がることを願っています。
-        </p>
+    <div class="container philosophy" id="理念">
+        <div>
+            <img src="/img/baby-1.jpeg" alt="baby-1">
+        </div>
+        <div class="philosophy-text">
+            <div class="philosophy-title">
+                <h2>「自分の得意を</h2>
+                <h2> 　見つけてほしい」</h2>
+            </div>
+            <p class="philosophy-description">
+                「みち知るべ」は、子供たちの未来への「みちしるべ」となることを目指し、彼らが新たな知識や経験を得る場を提供することに尽力します。私たちは、子供たちが自身の得意分野を見つけ、自信を持って成長できるよう、多様なワークショップを通じてサポートします。さらに、得意分野を見つけた子供たちが仲間を助け合い、共に成長することで、助け合いの輪が広がることを願っています。 
+            </p>
+        </div>
     </div>
 
     <!-- 私たちについて -->
@@ -71,18 +79,28 @@
     </div>
 
     <!-- お問い合わせ -->
-    <div class="container" id="お問い合わせ">
+    <div class="container contact" id="お問い合わせ">
         <h2>お問い合わせ</h2>
-        <form class="contact-form">
-            <label for="name">お名前:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">メールアドレス:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">メッセージ:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button type="submit">送信</button>
-        </form>
+        <p>お問い合わせはフォームより受けたまっております。</p>
     </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li><a href="#私たちについて">私たちについて</a></li>
+                    <li><a href="#理念">理念</a></li>
+                    <li><a href="#活動内容">活動内容</a></li>
+                    <li><a href="#お問い合わせ">お問い合わせ</a></li>
+                </ul>
+
+                <a class="insta" href="">「みち知るべ」公式インスタグラム</a>
+            </div>
+            <div class="footer-bottom">
+                <h2>NPO団体　みち知るべ</h2>
+            </div>
+        </div>
+    </footer>
 
     <script src="scripts.js"></script>
 </body>
