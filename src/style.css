@@ -106,12 +106,12 @@ nav {
 
 .container {
     padding: 20px;
-    margin: 4% 0 4%;
+    margin: 0 0 4%;
 }
 
 .philosophy {
     width: 80%;
-    margin: 8% auto 0;
+    margin: 8% auto 8%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,13 +147,37 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 4%;
+    margin-top:6% 0 6%;
 }
 
 .contact h2 {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 24px;
+}
+
+.contact-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    filter:drop-shadow(0px 0px 2px #898989);
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 16px 26px;
+    background-color: #1489FF;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #1489FF;
+    transform: scale(1.04);
 }
 
 .footer {
@@ -209,8 +233,7 @@ nav {
 #私たちについて {
     position: relative;
     background-color: #FFF5ED;
-    padding-top: 50px;
-    padding: 50px 8% 50px;
+    padding: 140px 8% 50px;
 
     .container-title{
         font-size: 3.8rem;
@@ -485,6 +508,11 @@ nav {
 
     .contact h2 {
         font-size: 1.6rem;
+    }
+
+    .contact-button {
+        font-size: 1rem;
+        padding: 16px 22px;
     }
 
     .footer-section {
