@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -178,16 +179,6 @@ nav {
     overflow: hidden;
     transition: transform 0.3s ease;
     margin: 40px;
-}
-
-.activity-card:first-child::after {
-	position: absolute;
-	content: '';
-	top: 0;
-	left: 100%;
-	height: 1px;
-	width: 20px;
-	background-color: transparent;
 }
 
 .activity-card:hover {
