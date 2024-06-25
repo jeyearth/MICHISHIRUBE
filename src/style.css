@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -176,6 +177,10 @@ nav {
     scroll-snap-align: start;
     overflow: hidden;
     transition: transform 0.3s ease;
+<<<<<<< HEAD
+=======
+    margin: 40px;
+>>>>>>> 9d98fd11f3ceccab666a0d613ac1d933abeeaaac
 }
 
 .activity-card:hover {
