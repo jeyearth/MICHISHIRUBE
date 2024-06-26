@@ -243,7 +243,7 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top:6% 0 6%;
+    margin:6% 0 10%;
 }
 
 .contact h2 {
@@ -560,6 +560,7 @@ nav {
         padding: 8px 4px 8px;
         background-color: rgb(250, 250, 250);
         margin-left: 16%;
+        margin-top: 40px;
     }
 
     .philosophy h2 {
