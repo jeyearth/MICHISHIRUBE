@@ -29,3 +29,11 @@ burger.addEventListener("click", () => {
   //burger animataion
   burger.classList.toggle("toggle");
 });
+
+//ハンバーガーメニューからリンクを押したら閉じる
+navLinks.forEach((link, index) => {
+  link.addEventListener("click", () => { 
+    if (window.getComputedStyle(burger).display === 'none') return;
+    burger.click(); 
+  });
+});
