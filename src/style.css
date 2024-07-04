@@ -50,7 +50,7 @@ nav {
     transition: 0.3s;
 }
 
-.nav-links li::before{
+.nav-links li a::before{
     content: "";
     display: block;
     position: absolute;
@@ -62,7 +62,7 @@ nav {
     transition: 0.3s;
 }
 
-.nav-links li::after{
+.nav-links li a::after{
     content: "";
     display: block;
     position: absolute;
