@@ -6,30 +6,36 @@
 
 body {
     font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
 }
 
 nav {
     display: flex;
     justify-content: space-around;
+    /* justify-content: center; */
     align-items: center;
     min-height: 8vh;
     background-color: white;
+    position: relative;
+    /* 親要素の位置を相対的に設定 */
+    z-index: 10;
+    /* ナビゲーションバーを最前面に配置 */
 }
 
 .logo {
     color: black;
     font-weight: bold;
     font-size: 24px;
+    margin-right: 38%;
+    padding-left: 10px;
 }
 
 .nav-links {
     display: flex;
-    /* background-color: red; */
     justify-content: space-around;
     width: 38%;
 }
@@ -42,6 +48,11 @@ nav {
     text-decoration: none;
     color: black;
     font-weight: bold;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: rgb(75, 75, 75);
 }
 
 .burger {
@@ -66,67 +77,309 @@ nav {
     position: relative;
     text-align: center;
     color: white;
-    margin-top: -20px; /* 全体的に上に移動 */
+    z-index: 1;
+    /* ナビゲーションバーよりも背面に配置 */
 }
 
-.header img {
+.header .header-pic {
     width: 100%;
     height: auto;
     display: block;
-    filter: brightness(50%); /* 画像に黒いフィルターをかける */
+    filter: brightness(50%);
+    height: 90vh;
+    object-fit: cover;
+    /* 画像をカバーする */
+    object-position: center;
+    /* 画像の中央を表示 */
 }
 
-.header h1 {
+.header .logo {
     position: absolute;
+    width: 40%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
+    margin-left: 16px;
     font-size: 2.5rem;
 }
 
 .container {
     padding: 20px;
+    margin: 4% 0 4%;
 }
 
-h2 {
-    color: #333;
+.philosophy {
+    width: 80%;
+    margin: 8% auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.contact-form {
+.philosophy img {
+    width: 110%;
+}
+
+.philosophy h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin: 3%;
+    margin-left: 6%;
+}
+
+.philosophy p {
+    margin: 6% 10%;
+    line-height: 1.6;
+}
+
+.activities {
+    margin-top: 4%;
+    background-color: #FFF5ED;
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form label {
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 1rem;
-}
-
-.footer {
-    background-color: #f8f8f8;
+    align-items: center;
     text-align: center;
 }
 
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 4%;
+}
+
+.contact h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.footer {
+    background-color: #FFF5ED;
+}
+
+.footer-container {
+    padding: 8% 8% 10%; 
+}
+
+.footer-section {
+    display: flex;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    transition: 0.2s;
+}
+
+.footer-section a:hover {
+    color: rgb(75, 75, 75);
+}
+
+.footer-section .insta {
+    margin-left: 18%;
+}
+
+.footer-bottom {
+    flex: 1; /* 追加 */
+    text-align: right; /* 追加 */
+    margin-top: 40px;
+}
+
+.footer-bottom h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-right: 0;
+}
+
+.container #私たちについて {
+    background-color: #FFC400;
+}
+
+#私たちについて {
+    position: relative;
+    background-color: #FFF5ED;
+    padding-top: 50px;
+    padding: 50px 8% 50px;
+
+    .container-title{
+        font-size: 4rem;
+        font-weight: bold;
+        margin-left: 10%;
+        margin-bottom: 3%;
+        color: #1489FF;
+    }
+
+    .unit {
+        position: relative;
+        display: flex;
+        margin: 0% 10% 5% 10%;
+        align-items: center; 
+
+        .shape {
+            text-align: center;
+            width: 20vw;
+            height: 20vw;
+            background-color: white;
+            margin: 10px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            color: white;
+            font-size: 15vw;
+        }
+
+        .unit-card {
+            background-color: white;
+            flex: 1; 
+            padding: 10px; 
+            min-height: 20vw;
+            margin-left: 80px;
+            border-radius: 50px;
+            padding: 50px;
+
+            p,
+            h3{
+                position: relative;
+                z-index: 2;
+            }
+            
+            h3 {
+                margin-bottom: 30px;
+                font-size: 3rem;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+        }
+
+        #shape00{
+            border-radius: 100%;
+            background-color: #B8E2AE;
+        }
+
+        #shape01{
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            background-color: #9BD4FF;
+            position: relative;
+
+            p{
+                position: relative;
+                bottom: -2vw;
+            }
+        }
+
+        #shape02{
+            border-radius: 10%;
+            background-color: #FFC400;
+        }
+    }
+
+    #unit2{
+        flex-direction: row-reverse;
+        .unit-card{
+            margin-left: 0px;
+            margin-right: 80px;
+        }
+    }
+
+    .decoretion-shape{
+        position: absolute;
+    }
+
+    #decoration00{
+        width: 12vw;
+        height: 12vw;
+        border-radius: 100%;
+        background-color: #FFC400;
+        right: 27%;
+        top: 30%;
+    }
+
+    #decoration01{
+        width: 8vw;
+        height: 8vw;
+        border-radius: 100%;
+        background-color: #FF9BBD;
+        left: 30%;
+        top: 60%;
+        z-index: 1;
+    }
+}
+
+
+
 @media screen and (max-width: 1024px) {
     .nav-links {
-        width: 55%;
+        width: 44%;
+    }
+
+    .philosophy {
+        width: 90%;
+    }
+
+    .philosophy h2 {
+        font-size: 2.2rem;
+    }
+
+    #私たちについて{
+        .container-title{
+            font-size: 3.5rem;
+        }
+
+        .unit,
+        #unit2{
+            flex-direction: column;
+            align-items: start;
+
+            .shape{
+                width: 10vw;
+                height: 10vw;
+                font-size: 5vw;
+            }
+
+            .unit-card{
+                margin: 0px;
+                padding: 40px;
+                
+                h3{
+                    font-size: 2.5rem;
+                }
+
+                p{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        #unit2{
+            align-items: end;
+        }
+
+        #decoration00{
+            top: 32%;
+        }
+
+        #decoration01{
+            top: 65%;
+            left: 33%;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
-
-    /* body {
-      display: none;
-    } */
     body {
         overflow-x: hidden;
     }
@@ -152,6 +405,98 @@ h2 {
     .burger {
         display: block;
     }
+
+    .header .header-pic {
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+        /* 画像をカバーする */
+        object-position: center;
+        /* 画像の中央を表示 */
+    }
+
+    .header .logo {
+        width: 64%;
+    }
+
+    .philosophy {
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        align-items: flex-end; /* 親要素の子要素を下揃えに配置 */
+    }
+
+    .philosophy img {
+        width: 60%;
+        height: auto;
+        margin-bottom: -80px; /* 画像の下部分を上に持ち上げて重なるように設定 */
+    }
+
+    .philosophy-text {
+        position: relative;
+        z-index: 1; /* テキストを画像の前面に配置 */
+    }
+
+    .philosophy-title {
+        padding: 8px 4px 8px;
+        background-color: rgb(250, 250, 250);
+        margin-left: 16%;
+    }
+
+    .philosophy h2 {
+        font-size: 1.6rem;
+        margin: 0;
+        color: black;
+    }
+
+    .philosophy p {
+        margin-top: 14%;
+        margin-bottom: 50px; /* 画像の持ち上げ部分と同じ値を設定 */
+    }
+
+
+    #私たちについて{
+        padding: 50px 0 50px;
+
+        .container-title{
+            font-size: 2.4rem;
+        }
+
+        .unit,
+        #unit2{
+
+            .unit-card{
+                margin: 0px;
+                padding: 40px;
+                
+                h3{
+                    font-size: 2.2rem;
+                }
+
+                p{
+                    font-size: 1.0rem;
+                }
+            }
+        }
+    }
+
+    .activities h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact h2 {
+        font-size: 1.6rem;
+    }
+
+    .footer-section {
+        flex-direction: column;
+    }
+
+    .footer-section .insta {
+        margin-left: 0;
+        margin-top: 4%;
+    }
+
 }
 
 @keyframes navLinksFade {
