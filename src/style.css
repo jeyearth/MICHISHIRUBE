@@ -213,12 +213,12 @@ nav {
     flex: 0 0 auto;
     width: 300px;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 32px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
     overflow: hidden;
     transition: transform 0.3s ease;
-    margin: 40px;
+    margin: 10px 20px;
 }
 
 .activity-card:hover {
@@ -234,12 +234,28 @@ nav {
 .activity-card h3 {
     font-size: 1.5rem;
     margin: 15px;
+    font-weight: 700;
 }
 
 .activity-card p {
     font-size: 1rem;
     margin: 0 15px 15px;
     line-height: 1.6;
+}
+
+.activity-card .activity-link {
+    color: #6d6d6d;
+    display: block; /* ブロック要素として扱う */
+    text-align: center; /* 中央寄せ */
+    padding: 8px 20px;
+    margin: 16px 0; /* 上部のマージン */
+    text-decoration: none; /* 初期状態で下線を無効化 */
+    text-underline-offset: 2px; /* 下線とテキストの間にスペースを開ける */
+}
+
+.activity-card .activity-link:hover {
+    color: #000000;
+    text-decoration: underline; /* hover時に下線を表示 */
 }
 
 .contact {
