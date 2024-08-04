@@ -550,6 +550,28 @@ nav {
         display: block;
     }
 
+    #burger-chk:checked ~ label .burger{
+        .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .line2 {
+            opacity: 0;
+        }
+        
+        .line3 {
+            transform: rotate(405deg) translate(-5px, -6px);
+        }
+    }
+
+    #burger-chk:checked ~ .nav-links{
+        transform: translateX(0%) !important;
+
+        li{
+            animation: 0.5s ease 0.4s 1 normal forwards running navLinksFade;
+        }
+    }
+
     .header .header-pic {
         width: 100%;
         height: 70vh;
