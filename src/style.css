@@ -79,29 +79,26 @@ nav {
     transition: 0.3s;
 }
 
-#nav-watashitachi:hover::before{
-    border-color: var(--bc-blue);
-}
-
-#nav-rinen:hover::before{
-    border-color: var(--bc-green);
-}
-
-#nav-otoiawase:hover::before{
-    border-color: var(--bc-orange);
-}
-
+#nav-watashitachi:hover::before,
 #nav-watashitachi:hover::after{
     border-color: var(--bc-blue);
 }
 
+#nav-rinen:hover::before,
 #nav-rinen:hover::after{
     border-color: var(--bc-green);
 }
 
+#nav-otoiawase:hover::before,
 #nav-otoiawase:hover::after{
     border-color: var(--bc-orange);
 }
+
+#nav-katsudounaiyou:hover::before,
+#nav-katsudounaiyou:hover::after{
+    border-color: var(--bc-red);
+}
+
 
 .nav-links a {
     text-decoration: none;
