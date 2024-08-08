@@ -1,0 +1,148 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+main {
+    max-width: 960px;
+    padding-top: 16px;
+    margin: 160px auto;
+}
+
+.article-header {
+    margin-bottom: 20px;
+}
+
+.article-title {
+    /* font-size: 2.5rem; */
+    font-size: 56px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-align: center;
+    padding: 0 16px;
+    margin-bottom: 56px;
+}
+
+.article-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+
+.article-date {
+    color: #888;
+    font-size: 1rem;
+    width: 653px;
+    margin: 0 auto;
+}
+
+.article-content {
+    width: 653px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.article-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.article-content p {
+    margin-bottom: 16px;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.article-footer {
+    text-align: center;
+}
+
+.article-footer {
+    max-width: 653px;
+    text-align: left;
+}
+
+#copyButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px; /* リンクとの間にスペースを追加 */
+}
+
+#copyButton img {
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        max-width: 692px;
+    }
+
+    .article-title {
+        font-size: 48px;
+    }
+
+    .article-date {
+        max-width: 576px;
+    }
+
+    .article-content {
+        max-width: 576px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        max-width: 416px;
+    }
+
+    .article-title {
+        font-size: 32px;
+    }
+
+    .article-date {
+        max-width: 362px;
+        padding: 0 16px;
+    }
+
+    .article-content {
+        max-width: 362px;
+    }
+
+    .article-content h2 {
+        padding: 0 16px;
+    }
+
+    .article-content p {
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 416px) {
+    main {
+        max-width: 100%;
+    }
+
+    .article-date {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .article-content {
+        max-width: 100%;
+    }
+}
