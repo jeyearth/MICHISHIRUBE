@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+
+    --bc-green: #A7FF00;
+    --bc-orange: #FFC400;
+    --bc-blue: #00EBFF;
+    --bc-red: #FF9BBD;
 }
 
 body {
@@ -74,29 +79,26 @@ nav {
     transition: 0.3s;
 }
 
-#nav-watashitachi:hover::before{
-    border-color: #00EBFF;
-}
-
-#nav-rinen:hover::before{
-    border-color: #A7FF00;
-}
-
-#nav-otoiawase:hover::before{
-    border-color: #FFC400;
-}
-
+#nav-watashitachi:hover::before,
 #nav-watashitachi:hover::after{
-    border-color: #00EBFF;
+    border-color: var(--bc-blue);
 }
 
+#nav-rinen:hover::before,
 #nav-rinen:hover::after{
-    border-color: #A7FF00;
+    border-color: var(--bc-green);
 }
 
+#nav-otoiawase:hover::before,
 #nav-otoiawase:hover::after{
-    border-color: #FFC400;
+    border-color: var(--bc-orange);
 }
+
+#nav-katsudounaiyou:hover::before,
+#nav-katsudounaiyou:hover::after{
+    border-color: var(--bc-red);
+}
+
 
 .nav-links a {
     text-decoration: none;
@@ -343,7 +345,7 @@ nav {
 }
 
 .container #私たちについて {
-    background-color: #FFC400;
+    background-color: var(--bc-orange);
 }
 
 #私たちについて {
@@ -406,12 +408,12 @@ nav {
 
         #shape00{
             border-radius: 100%;
-            background-color: #B8E2AE;
+            background-color: var(--bc-green);
         }
 
         #shape01{
             clip-path: polygon(0 100%, 50% 0, 100% 100%);
-            background-color: #9BD4FF;
+            background-color: var(--bc-blue);
             position: relative;
 
             p{
@@ -422,7 +424,7 @@ nav {
 
         #shape02{
             border-radius: 10%;
-            background-color: #FFC400;
+            background-color: var(--bc-orange);
         }
     }
 
@@ -442,7 +444,7 @@ nav {
         width: 12vw;
         height: 12vw;
         border-radius: 100%;
-        background-color: #FFC400;
+        background-color: var(--bc-orange);
         right: 27%;
         top: 30%;
     }
@@ -451,7 +453,7 @@ nav {
         width: 8vw;
         height: 8vw;
         border-radius: 100%;
-        background-color: #FF9BBD;
+        background-color: var(--bc-red);
         left: 30%;
         top: 60%;
         z-index: 1;
@@ -548,6 +550,28 @@ nav {
 
     .burger {
         display: block;
+    }
+
+    #burger-chk:checked ~ label .burger{
+        .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .line2 {
+            opacity: 0;
+        }
+        
+        .line3 {
+            transform: rotate(405deg) translate(-5px, -6px);
+        }
+    }
+
+    #burger-chk:checked ~ .nav-links{
+        transform: translateX(0%) !important;
+
+        li{
+            animation: 0.5s ease 0.4s 1 normal forwards running navLinksFade;
+        }
     }
 
     .header .header-pic {
