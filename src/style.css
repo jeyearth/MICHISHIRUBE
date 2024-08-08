@@ -20,7 +20,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 8vh; /* min-height を height に変更 */
+    height: 72px; /* min-height を height に変更 */
     background-color: white;
     position: fixed; /* 位置を固定 */
     width: 100%; /* 幅を全体に */
