@@ -2,28 +2,37 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    --bc-green: #B7E2AE;
+    --bc-orange: #FFC400;
+    --bc-blue: #9BD3FF;
+    --bc-red: #FF9BBD;
 }
 
 body {
+    padding-top: 8vh; /* ナビゲーションバーの高さ分だけトップにパディングを追加 */
     font-family: "Helvetica Neue",
         Arial,
         "Hiragino Kaku Gothic ProN",
         "Hiragino Sans",
         Meiryo,
         sans-serif;
+    overflow-x: hidden;
 }
 
 nav {
     display: flex;
     justify-content: space-around;
-    /* justify-content: center; */
     align-items: center;
-    min-height: 8vh;
+    height: 72px; /* min-height を height に変更 */
     background-color: white;
-    position: relative;
-    /* 親要素の位置を相対的に設定 */
-    z-index: 10;
-    /* ナビゲーションバーを最前面に配置 */
+    position: fixed; /* 位置を固定 */
+    width: 100%; /* 幅を全体に */
+    top: 0; /* 上端に配置 */
+    left: 0; /* 左端に配置 */
+    z-index: 10; /* ナビゲーションバーを最前面に配置 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ナビバーに影を追加 */
 }
 
 .logo {
@@ -42,7 +51,54 @@ nav {
 
 .nav-links li {
     list-style: none;
+    position: relative;
+    transition: 0.3s;
 }
+
+.nav-links li a::before{
+    content: "";
+    display: block;
+    position: absolute;
+    left: -2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    border: solid gray 0.4rem;
+    transition: 0.3s;
+}
+
+.nav-links li a::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: calc(100% + 2.1rem);
+    height: 100%;
+    border-top: solid gray 4.9px;
+    left: -1.5rem;
+    top: 1.2rem;
+    transition: 0.3s;
+}
+
+#nav-watashitachi:hover::before,
+#nav-watashitachi:hover::after{
+    border-color: var(--bc-blue);
+}
+
+#nav-rinen:hover::before,
+#nav-rinen:hover::after{
+    border-color: var(--bc-green);
+}
+
+#nav-otoiawase:hover::before,
+#nav-otoiawase:hover::after{
+    border-color: var(--bc-orange);
+}
+
+#nav-katsudounaiyou:hover::before,
+#nav-katsudounaiyou:hover::after{
+    border-color: var(--bc-red);
+}
+
 
 .nav-links a {
     text-decoration: none;
@@ -106,12 +162,12 @@ nav {
 
 .container {
     padding: 20px;
-    margin: 4% 0 4%;
+    margin: 0 0 4%;
 }
 
 .philosophy {
     width: 80%;
-    margin: 8% auto 0;
+    margin: 8% auto 8%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,12 +190,74 @@ nav {
 }
 
 .activities {
-    margin-top: 4%;
-    background-color: #FFF5ED;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 20px;
+    margin: 4% 0;
+    padding: 6% 0;
+    background-color: #EDF1FF;
+}
+
+.activities .section-title {
     text-align: center;
+    font-size: 3.0rem;
+    margin-bottom: 32px;
+    font-weight: bold;
+}
+
+.activities-wrapper {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px 0px;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+}
+
+.activity-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* scroll-snap-align: start; */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 10px 20px;
+}
+
+.activity-card:hover {
+    transform: scale(1.04);
+}
+
+.activity-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.activity-card h3 {
+    font-size: 1.5rem;
+    margin: 15px;
+    font-weight: 700;
+}
+
+.activity-card p {
+    font-size: 1rem;
+    margin: 0 15px 15px;
+    line-height: 1.6;
+}
+
+.activity-card .activity-link {
+    color: #6d6d6d;
+    display: block; /* ブロック要素として扱う */
+    text-align: center; /* 中央寄せ */
+    padding: 8px 20px;
+    margin: 16px 0; /* 上部のマージン */
+    text-decoration: none; /* 初期状態で下線を無効化 */
+    text-underline-offset: 2px; /* 下線とテキストの間にスペースを開ける */
+}
+
+.activity-card .activity-link:hover {
+    color: #000000;
+    text-decoration: underline; /* hover時に下線を表示 */
 }
 
 .contact {
@@ -147,13 +265,37 @@ nav {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 4%;
+    margin:6% 0 10%;
 }
 
 .contact h2 {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 24px;
+}
+
+.contact-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    filter:drop-shadow(0px 0px 2px #898989);
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 16px 26px;
+    background-color: #1489FF;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #1489FF;
+    transform: scale(1.04);
 }
 
 .footer {
@@ -203,17 +345,16 @@ nav {
 }
 
 .container #私たちについて {
-    background-color: #FFC400;
+    background-color: var(--bc-orange);
 }
 
 #私たちについて {
     position: relative;
     background-color: #FFF5ED;
-    padding-top: 50px;
-    padding: 50px 8% 50px;
+    padding: 140px 8% 50px;
 
     .container-title{
-        font-size: 4rem;
+        font-size: 3.8rem;
         font-weight: bold;
         margin-left: 10%;
         margin-bottom: 3%;
@@ -256,23 +397,23 @@ nav {
             
             h3 {
                 margin-bottom: 30px;
-                font-size: 3rem;
+                font-size: 2.5rem;
                 font-weight: bold;
             }
 
             p {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
         }
 
         #shape00{
             border-radius: 100%;
-            background-color: #B8E2AE;
+            background-color: var(--bc-green);
         }
 
         #shape01{
             clip-path: polygon(0 100%, 50% 0, 100% 100%);
-            background-color: #9BD4FF;
+            background-color: var(--bc-blue);
             position: relative;
 
             p{
@@ -283,7 +424,7 @@ nav {
 
         #shape02{
             border-radius: 10%;
-            background-color: #FFC400;
+            background-color: var(--bc-orange);
         }
     }
 
@@ -303,7 +444,7 @@ nav {
         width: 12vw;
         height: 12vw;
         border-radius: 100%;
-        background-color: #FFC400;
+        background-color: var(--bc-orange);
         right: 27%;
         top: 30%;
     }
@@ -312,7 +453,7 @@ nav {
         width: 8vw;
         height: 8vw;
         border-radius: 100%;
-        background-color: #FF9BBD;
+        background-color: var(--bc-red);
         left: 30%;
         top: 60%;
         z-index: 1;
@@ -336,7 +477,7 @@ nav {
 
     #私たちについて{
         .container-title{
-            font-size: 3.5rem;
+            font-size: 3.2rem;
         }
 
         .unit,
@@ -345,9 +486,9 @@ nav {
             align-items: start;
 
             .shape{
-                width: 10vw;
-                height: 10vw;
-                font-size: 5vw;
+                width: 11vw;
+                height: 11vw;
+                font-size: 8vw;
             }
 
             .unit-card{
@@ -380,9 +521,14 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-    body {
+    html, body {
+        width: 100%;
         overflow-x: hidden;
     }
+
+    /* body {
+        overflow-x: hidden;
+    } */
 
     .nav-links {
         /* display: flex; */
@@ -404,6 +550,28 @@ nav {
 
     .burger {
         display: block;
+    }
+
+    #burger-chk:checked ~ label .burger{
+        .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .line2 {
+            opacity: 0;
+        }
+        
+        .line3 {
+            transform: rotate(405deg) translate(-5px, -6px);
+        }
+    }
+
+    #burger-chk:checked ~ .nav-links{
+        transform: translateX(0%) !important;
+
+        li{
+            animation: 0.5s ease 0.4s 1 normal forwards running navLinksFade;
+        }
     }
 
     .header .header-pic {
@@ -441,6 +609,7 @@ nav {
         padding: 8px 4px 8px;
         background-color: rgb(250, 250, 250);
         margin-left: 16%;
+        margin-top: 40px;
     }
 
     .philosophy h2 {
@@ -464,13 +633,12 @@ nav {
 
         .unit,
         #unit2{
-
             .unit-card{
                 margin: 0px;
                 padding: 40px;
                 
                 h3{
-                    font-size: 2.2rem;
+                    font-size: 2.0rem;
                 }
 
                 p{
@@ -488,6 +656,11 @@ nav {
         font-size: 1.6rem;
     }
 
+    .contact-button {
+        font-size: 1rem;
+        padding: 16px 22px;
+    }
+
     .footer-section {
         flex-direction: column;
     }
@@ -496,7 +669,35 @@ nav {
         margin-left: 0;
         margin-top: 4%;
     }
+}
 
+@media screen and (max-width: 500px) {
+    
+    .activities {
+        padding: 14% 0;
+    }
+
+    .activities .section-title {
+        font-size: 2.0rem;
+    }
+
+    .activity-card {
+        width: 250px;
+        margin: 0 auto;
+    }
+
+    .activities-wrapper {
+        /* flex-direction: column; */
+        gap: 20px;
+    }
+
+    .activity-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .activity-card p {
+        font-size: 0.9rem;
+    }
 }
 
 @keyframes navLinksFade {
